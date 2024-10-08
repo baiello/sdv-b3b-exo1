@@ -123,7 +123,7 @@ main {
     .photo_resto{
         
         padding: 0;
-        
+        display: flex;
 
         img{
             width: 100%;
