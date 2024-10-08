@@ -272,6 +272,7 @@ main {
     justify-content: space-between;
     font-family: var(--font-title);
     font-size: 16px;
+    
 
     @media screen and (min-width: 768px) {
         justify-content: center;
@@ -282,6 +283,8 @@ main {
 
 .menu-form {
 
+     
+
     .menu-section {
         display: flex;
         flex-direction: column;
@@ -289,6 +292,16 @@ main {
         text-align: left;
         border: 0;
         width: 100%;
+
+        legend::after {
+            content: '';
+                    display: block;
+                    width: 40px;
+                    height: 4px;
+                    background-color: #99E2D0;
+                    margin-top: 6px;
+                    margin-bottom: 12px;
+                }
 
         input {
             display: none;
@@ -311,11 +324,11 @@ main {
             }
 
             .label-price {
-                flex-direction: row;
-
+                
+                text-align: right;
+                position: relative;
                 span, div {
                     padding: 5px 10px;
-                    
                 }
 
                 div {
@@ -330,13 +343,30 @@ main {
             display: flex;
             left: 59px;
             transition: left .5s;
-
         }
 
         input:checked + label .label-price {
             left: 0;
         }
     }
+}
+
+.box {
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+
+}
+
+.label-price span h3 {
+
+    margin-top: 35px;
+
+}
+
+.label-title span {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 
