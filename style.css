@@ -267,6 +267,20 @@ main {
 }
 
 
+
+.resto-main{
+    background-color: #F6F6F6;
+    border-radius: 25px;
+    
+
+    @media screen and (min-width: 1440px) {
+        width: 1055px;    
+        margin: auto;
+    }
+
+}
+
+
 .resto-header {
     display: flex;
     justify-content: space-between;
@@ -274,6 +288,12 @@ main {
     font-size: 16px;
 
     @media screen and (min-width: 768px) {
+        justify-content: center;
+        gap: 25px;
+        font-size: 28px;
+    }
+
+    @media screen and (min-width: 1440px) {
         justify-content: center;
         gap: 25px;
         font-size: 28px;
@@ -290,6 +310,11 @@ main {
         border: 0;
         width: 100%;
 
+        @media screen and (min-width: 1440px) {
+            padding: 0px 210px;;
+        }
+
+
         input {
             display: none;
         }
@@ -299,7 +324,7 @@ main {
             flex-direction: row;
             width: 100%;
             background-color: #FFFFFF;
-            border-radius: 15px;
+            border-radius: 40px;
             overflow: hidden;
 
             .label-title {
@@ -308,6 +333,9 @@ main {
                 padding: 5px 10px;
                 white-space: nowrap;
                 overflow: hidden;
+
+                
+                
             }
 
             .label-price {
@@ -329,10 +357,18 @@ main {
             display: flex;
             left: 59px;
             transition: left .5s;
+
+            @media screen and (min-width: 1440px) {
+                left: 306px;
+            }
         }
 
         input:checked + label .label-price {
-            left: 0;
+            left: 0px;
+
+            @media screen and (min-width: 1440px) {
+                left: 247px
+            }
         }
     }
 }
