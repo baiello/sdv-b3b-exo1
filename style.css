@@ -315,6 +315,7 @@ main {
 
                 span, div {
                     padding: 5px 10px;
+                    
                 }
 
                 div {
@@ -329,6 +330,7 @@ main {
             display: flex;
             left: 59px;
             transition: left .5s;
+
         }
 
         input:checked + label .label-price {
