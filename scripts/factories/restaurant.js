@@ -37,4 +37,4 @@ const createRestaurant = (restaurant) => {
         isNew: isNew,
         createCard: createCard,
     }
-  };
+};

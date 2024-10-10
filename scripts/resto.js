@@ -1,3 +1,24 @@
+import { getData } from "./index.js";
+
+const searchParams = new URLSearchParams(window.location.search);
+const restoId = searchParams.get('id');
+
+function getRestaurantById(id) {
+  return getData().then(
+    (restaurants) => {
+      let resto;
+      restaurants.forEach(restaurant => {
+        if (restaurant.id == id) {
+          resto = restaurant;
+        }
+      });
+      return resto;
+    }
+  );
+}
+
+getRestaurantById(restoId).then(data => console.log(data));
+
 const modal = document.getElementById("restaurant-modal");
 const openButton = document.getElementById("button-modal");
 const closeButton = document.getElementById("close-modal");
