@@ -1,4 +1,5 @@
 import { getData } from "./index.js";
+import { createRestaurant } from "./factories/restaurant.js";
 
 const searchParams = new URLSearchParams(window.location.search);
 const restoId = searchParams.get('id');
@@ -17,7 +18,31 @@ function getRestaurantById(id) {
   );
 }
 
-getRestaurantById(restoId).then(data => console.log(data));
+getRestaurantById(restoId).then(
+  data => {
+    const restaurant = createRestaurant(data);
+    updatePageTitle(restaurant.name);
+    updatePicture(restaurant.pictureUrl);
+    updateRestaurantName(restaurant.name);
+
+    document.getElementById('menu-form').append(restaurant.createMenuForm());
+  }
+);
+
+function updatePageTitle(title) {
+  const pageTitleElement = document.getElementsByTagName('title')[0];
+  pageTitleElement.innerText = title;
+}
+
+function updatePicture(url) {
+  const restaurantImageElement = document.getElementById('restaurant-image');
+  restaurantImageElement.setAttribute('src', url);
+}
+
+function updateRestaurantName(name) {
+  const restaurantNameElement = document.getElementById('restaurant-name');
+  restaurantNameElement.innerText = name;
+}
 
 const modal = document.getElementById("restaurant-modal");
 const openButton = document.getElementById("button-modal");

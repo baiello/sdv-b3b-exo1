@@ -1,253 +1,71 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La palette du goût</title>
-    <link rel="stylesheet" type="text/css" href="../style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/0ed4d5c1f3.js" crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <header>
-      <div>
-        <a href="/index.html" class="headerClass">
-          <img src="/images/restaurants/icons8-home.svg" alt="Icône Home">
-        </a>
-        <span id="main-logo">ohmyfood</span>
-      </div>
-    </header>
-    <main>
-      <section class="photo_resto">
-        <img src="/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.avif" alt="Image d'une spécialité de La palette du goût">
-      </section>
-      <section class="resto-main">
-        <div class="resto-header">
-          <h1>La palette du goût</h1>
-          <div class="favorite">
-            <input type="checkbox" id="favorite" />
-            <label for="favorite">
-              <i class="fa-solid fa-heart"></i>
-              <i class="fa-regular fa-heart"></i>
-            </label>
-          </div>
-        </div>
-        <button id="button-modal">Réserver</button>
-        <div id="restaurant-modal">
-            <div class="modal-container">
-                <button id="close-modal">X</button>
-                <h2>Réserver</h2>
-                <form action="" id="form1" novalidate>
-                  <div>
-                    <label for="nom">Nom :</label>
-                    <input type="text" name="nom" id="nom" required>
-                  </div>
-                  <label for="firstName">Prenom :</label>
-                  <input type="text" name="firstName" id="firstName" required>
-                  <label for="email">Adresse email :</label>
-                  <input type="email" name="email" id="email" required>
-                  <label for="tel">Tél :</label>
-                  <input type="tel" name="tel" id="tel" required>
-                  <label for="dateReserve">Date de réservation:</label>
-                  <input type="date" name="dateReserve" id="dateReserve" required>
-                  <label for="timeReserve">Heure de réservation :</label>
-                  <input type="time" name="timeReserve" id="timeReserve" required>
-                  <label for="nbPerson">Nombre de personnes :</label>
-                  <input type="text" name="nbPerson" id="nbPerson" required>
-                  <input type="submit" name="send" id="send">
-                </form>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>La palette du goût</title>
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/0ed4d5c1f3.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <div>
+                <a href="/index.html" class="headerClass">
+                    <img src="/images/restaurants/icons8-home.svg" alt="Icône Home">
+                </a>
+                <span id="main-logo">ohmyfood</span>
             </div>
-        </div>
-        <form class="menu-form" method="GET" action="#">
-          <div class="menu-section">
-            <h2>Entrées</h2>
-            <div class="box">
-              <input type="checkbox" id="entree1" name="entree" value="entree1" />
-              <label for="entree1">
-                <div class="label-title">
-                  <div>
-                    <h3>Fricassée d'escargots</h3>
-                  </div>
-                  <div>Au piment d'espelette au piment</div>
+        </header>
+        <main>
+            <section class="photo_resto">
+                <img id="restaurant-image" src="/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.avif" alt="Image d'une spécialité de La palette du goût">
+            </section>
+            <section class="resto-main">
+                <div class="resto-header">
+                    <h1 id="restaurant-name">La palette du goût</h1>
+                    <div class="favorite">
+                        <input type="checkbox" id="favorite" />
+                        <label for="favorite">
+                            <i class="fa-solid fa-heart"></i>
+                            <i class="fa-regular fa-heart"></i>
+                        </label>
+                    </div>
                 </div>
-                <div class="label-price">
-                  <div>
-                    <h3>25€</h3>
-                  </div>
-                  <div>
-                    <i class="fa-solid fa-check"></i>
-                  </div>
+                <button id="button-modal">Réserver</button>
+                <div id="restaurant-modal">
+                    <div class="modal-container">
+                        <button id="close-modal">X</button>
+                        <h2>Réserver</h2>
+                        <form action="" id="form1" novalidate>
+                            <div>
+                                <label for="nom">Nom :</label>
+                                <input type="text" name="nom" id="nom" required>
+                            </div>
+                            <label for="firstName">Prenom :</label>
+                            <input type="text" name="firstName" id="firstName" required>
+                            <label for="email">Adresse email :</label>
+                            <input type="email" name="email" id="email" required>
+                            <label for="tel">Tél :</label>
+                            <input type="tel" name="tel" id="tel" required>
+                            <label for="dateReserve">Date de réservation:</label>
+                            <input type="date" name="dateReserve" id="dateReserve" required>
+                            <label for="timeReserve">Heure de réservation :</label>
+                            <input type="time" name="timeReserve" id="timeReserve" required>
+                            <label for="nbPerson">Nombre de personnes :</label>
+                            <input type="text" name="nbPerson" id="nbPerson" required>
+                            <input type="submit" name="send" id="send">
+                        </form>
+                    </div>
                 </div>
-              </label>
-            </div>
-            <div class="box">
-              <input type="checkbox" id="entree2" name="entree" value="entree2" />
-              <label for="entree2">
-                <div class="label-title">
-                  <div>
-                    <h3>Fricassée d'escargots</h3>
-                  </div>
-                  <div>Au piment d'espelette au piment</div>
-                </div>
-                <div class="label-price">
-                  <div>
-                    <h3>25€</h3>
-                  </div>
-                  <div>
-                    <i class="fa-solid fa-check"></i>
-                  </div>
-                </div>
-              </label>
-            </div>
-            <div class="box">
-              <input type="checkbox" id="entree3" name="entree" value="entree3" />
-              <label for="entree3">
-                <div class="label-title">
-                  <div>
-                    <h3>Fricassée d'escargots</h3>
-                  </div>
-                  <div>Au piment d'espelette au piment</div>
-                </div>
-                <div class="label-price">
-                  <div>
-                    <h3>25€</h3>
-                  </div>
-                  <div>
-                    <i class="fa-solid fa-check"></i>
-                  </div>
-                </div>
-              </label>
-            </div>
-          </div>
-          <div class="menu-section">
-            <h2>Plats</h2>
-            <div class="box">
-              <input type="checkbox" id="plat1" name="plat" value="plat1" />
-              <label for="plat1">
-                <div class="label-title">
-                  <div>
-                    <h3>Fricassée d'escargots</h3>
-                  </div>
-                  <div>Au piment d'espelette au piment</div>
-                </div>
-                <div class="label-price">
-                  <div>
-                    <h3>25€</h3>
-                  </div>
-                  <div>
-                    <i class="fa-solid fa-check"></i>
-                  </div>
-                </div>
-              </label>
-            </div>
-            <div class="box">
-              <input type="checkbox" id="plat2" name="plat" value="plat2" />
-              <label for="plat2">
-                <div class="label-title">
-                  <div>
-                    <h3>Fricassée d'escargots</h3>
-                  </div>
-                  <div>Au piment d'espelette au piment</div>
-                </div>
-                <div class="label-price">
-                  <div>
-                    <h3>25€</h3>
-                  </div>
-                  <div>
-                    <i class="fa-solid fa-check"></i>
-                  </div>
-                </div>
-              </label>
-            </div>
-            <div class="box">
-              <input type="checkbox" id="plat3" name="plat" value="plat3" />
-              <label for="plat3">
-                <div class="label-title">
-                  <div>
-                    <h3>Fricassée d'escargots</h3>
-                  </div>
-                  <div>Au piment d'espelette au piment</div>
-                </div>
-                <div class="label-price">
-                  <div>
-                    <h3>25€</h3>
-                  </div>
-                  <div>
-                    <i class="fa-solid fa-check"></i>
-                  </div>
-                </div>
-              </label>
-            </div>
-          </div>
-          <div class="menu-section">
-            <h2>Desserts</h2>
-            <div class="box">
-              <input type="checkbox" id="dessert1" name="dessert" value="dessert1" />
-              <label for="dessert1">
-                <div class="label-title">
-                  <div>
-                    <h3>Fricassée d'escargots</h3>
-                  </div>
-                  <div>Au piment d'espelette au piment</div>
-                </div>
-                <div class="label-price">
-                  <div>
-                    <h3>25€</h3>
-                  </div>
-                  <div>
-                    <i class="fa-solid fa-check"></i>
-                  </div>
-                </div>
-              </label>
-            </div>
-            <div class="box">
-              <input type="checkbox" id="dessert2" name="dessert" value="dessert1" />
-              <label for="dessert2">
-                <div class="label-title">
-                  <div>
-                    <h3>Fricassée d'escargots</h3>
-                  </div>
-                  <div>Au piment d'espelette au piment</div>
-                </div>
-                <div class="label-price">
-                  <div>
-                    <h3>25€</h3>
-                  </div>
-                  <div>
-                    <i class="fa-solid fa-check"></i>
-                  </div>
-                </div>
-              </label>
-            </div>
-            <div class="box">
-              <input type="checkbox" id="dessert3" name="dessert" value="dessert3" />
-              <label for="dessert3">
-                <div class="label-title">
-                  <div>
-                    <h3>Fricassée d'escargots</h3>
-                  </div>
-                  <div>Au piment d'espelette au piment</div>
-                </div>
-                <div class="label-price">
-                  <div>
-                    <h3>25€</h3>
-                  </div>
-                  <div>
-                    <i class="fa-solid fa-check"></i>
-                  </div>
-                </div>
-              </label>
-            </div>
-          </div>
-          <div class="form-submit">
-            <input class="button" type="submit" value="Commander">
-          </div>
-        </form>
-      </section>
-    </main>
-    <script type="module" src="/scripts/resto.js"></script>
-  </body>
+
+                <div id="menu-form"></div>
+
+            </section>
+        </main>
+        <script type="module" src="/scripts/resto.js"></script>
+    </body>
 </html>
