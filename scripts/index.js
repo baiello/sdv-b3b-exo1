@@ -15,14 +15,8 @@ function fetchRestaurantData() {
   //   const response = fetch('https://gist.githubusercontent.com/baiello/a42c640d3bd6a52d965b29e3e0de6db7/raw/5b57e9cbb809c6ac531345309cc0a5febb5f141e/restaurants.json'); // Remplace par ton URL
   //   const restaurants = response.json();
 
-  //   console.log("données reçus", response.json());
-  //   if (!response.ok) {
-  //   throw new Error(`Erreur HTTP ! statut : ${response.status}`);
-  // }
-
 
   //   displayRestaurants(restaurants);
-  //   console.log("données reçus", restaurants)
   // } catch (error) {
   //   console.error("Erreur lors de la récupération des données des restaurants : ", error);
   // }
@@ -36,22 +30,28 @@ function fetchRestaurantData() {
 // function displayRestaurants(restaurants) {
   fetchRestaurantData().then(
     (restaurants) => {
-  const restaurantList = document.getElementById('restaurant-list');
-  const restaurantsLengh = restaurants.length;
+    const restaurantList = document.getElementById('restaurant-list');
+    const restaurantsLengh = restaurants.length;
 
-  for ( let i = 0; i < restaurantsLengh; i++ ) {
-    const restaurantItem = document.createElement('div');
-    restaurantItem.classList.add('restaurant');
+    console.log("données reçus", restaurants)
 
-    restaurantItem.innerHTML = `
-      <h2>${restaurant.name}</h2>
-      <p>Location: ${restaurant.location}</p>
-      
-    `;
 
-    restaurantList.appendChild(restaurantItem);
-  };
-});
+    for ( let i = 0; i < restaurantsLengh; i++ ) {
+      // const restaurantItem = document.createElement('div');
+      // restaurantItem.classList.add('restaurant');
+
+      // restaurantItem.innerHTML = `
+      //   <h2>${restaurants[i].name}</h2>
+      //   <p>Location: ${restaurants[i].location}</p>
+        
+      // `;
+
+      // restaurantList.appendChild(restaurantItem);
+      const restaurant = createRestaurant(restaurants[i]);
+      restaurantList.append(restaurant.createCard());
+    };
+  }
+);
 
 
 {/* <h3>Menu</h3>
@@ -67,3 +67,6 @@ function fetchRestaurantData() {
       <ul>
         ${restaurant.menu.dessert.map(dessert => `<li>${dessert.label} - ${dessert.description} (${dessert.price})</li>`).join('')}
       </ul> */}
+
+
+
