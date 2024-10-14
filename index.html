@@ -29,7 +29,7 @@
                     <div class="container">
                         <h1>Réservez le menu qui vous convient</h1>
                         <p>Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
-                        <a class="button" href="#nosResturants">Explorer nos restaurants</a>
+                        <a id="link-to-restaurants" class="button" href="#nosResturants">Explorer nos restaurants</a>
                     </div>
                 </section>
                 <section class="section-fct">
@@ -47,7 +47,9 @@
                 <section>
                     <div id="nosResturants" class="container">
                         <h2>Restaurants</h2>
-                        <div id="restaurants" class="restaurants"></div>
+                        <div id="restaurants" class="restaurants">
+                            <div id="restaurants-loader">Chargement ...</div>
+                        </div>
                     </div>
                 </section>
             </main>
