@@ -9,7 +9,7 @@ export default {
             },
         },
     },
-    base: '/sdv-b3b-exo1/'
+    base: '/sdv-b3b-exo1/',
     server: {
         host: "0.0.0.0",
         port: 5173
